@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/12 18:38:04 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/13 16:13:30 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/13 17:45:05 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/13 17:58:15 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include "../inc/Account.hpp"
 
-#include <sstream>
-#include "Contact.hpp"
+Account::Account(int initial_deposit)
+{
+	
+}
 
-class PhoneBook
-{ 
-	public:
-		PhoneBook();
-		~PhoneBook();
-		
-		void AddContact();
-		void DisplayContact();
-		
-	private:
-		int		list;
-		Contact	contatos[8];
-};
-
-#endif
+Account::~Account(void)
+{
+	
+}

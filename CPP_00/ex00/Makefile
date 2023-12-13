@@ -6,13 +6,13 @@
 #    By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/12 11:54:11 by ekaik-ne          #+#    #+#              #
-#    Updated: 2023/12/12 17:32:48 by ekaik-ne         ###   ########.fr        #
+#    Updated: 2023/12/13 13:15:16 by ekaik-ne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = megaphone.cpp

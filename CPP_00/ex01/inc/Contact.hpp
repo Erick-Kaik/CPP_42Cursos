@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/12 18:38:04 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/13 16:13:30 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/13 10:04:31 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/13 16:41:37 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-#include <sstream>
-#include "Contact.hpp"
+#include <string>
+#include <iostream>
 
-class PhoneBook
-{ 
+class Contact
+{
 	public:
-		PhoneBook();
-		~PhoneBook();
+		Contact();
+		~Contact();
+
+		void Add(std::string FirstName, std::string LastName, std::string Nickname, std::string PhoneNumber, std::string darkestSecret);
 		
-		void AddContact();
-		void DisplayContact();
-		
+		void Display();
 	private:
-		int		list;
-		Contact	contatos[8];
+		std::string FirstName;
+		std::string LastName;
+		std::string Nickname;
+		std::string PhoneNumber;
+		std::string darkestSecret;
 };
 
 #endif
