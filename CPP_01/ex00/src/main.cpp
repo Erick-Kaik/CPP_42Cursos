@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 17:45:05 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/14 09:00:59 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/14 13:53:15 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/14 14:12:52 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Account.hpp"
+#include "../inc/Zombie.hpp"
 
-int	getIndex(void)
+int main(void)
 {
-	static int 	index = -1;
+	Zombie *zCleiton;
 
-	index++;
-	return (index);
-}
-
-Account::Account(int initial_deposit)
-{
-	this->_accountIndex = getIndex();
-}
-
-Account::~Account(void)
-{
-	
+	zCleiton = newZombie("Cleitin da Varoas");
+	zCleiton->announce();
+	delete(zCleiton);
+	randomChump("Valmir King of Delas");
+	return (0);
 }

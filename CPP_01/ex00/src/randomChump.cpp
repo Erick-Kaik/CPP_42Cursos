@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 17:45:05 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/14 09:00:59 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/14 13:39:22 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/14 14:13:28 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Account.hpp"
+#include "../inc/Zombie.hpp"
 
-int	getIndex(void)
+void randomChump( std::string name )
 {
-	static int 	index = -1;
+	Zombie zombie;
 
-	index++;
-	return (index);
-}
-
-Account::Account(int initial_deposit)
-{
-	this->_accountIndex = getIndex();
-}
-
-Account::~Account(void)
-{
-	
+	zombie.setName(name);
+	zombie.announce();
 }

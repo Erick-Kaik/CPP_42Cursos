@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 17:45:05 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/14 09:00:59 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/14 16:35:20 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/14 17:16:28 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Account.hpp"
+#include "../inc/HumanB.hpp"
 
-int	getIndex(void)
+HumanB::HumanB(std::string name)
 {
-	static int 	index = -1;
-
-	index++;
-	return (index);
+	this->name = name;
 }
 
-Account::Account(int initial_deposit)
+HumanB::~HumanB() { }
+
+void attack(void)
 {
-	this->_accountIndex = getIndex();
+	// std::cout << this.name + " attacks with their " + this.weapon << std::endl;
 }
 
-Account::~Account(void)
+void setWeapon(Weapon gun) 
 {
-	
+	this->gun = gun;
 }

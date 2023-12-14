@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 17:45:05 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/14 09:00:59 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/14 16:35:15 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/14 17:05:06 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Account.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-int	getIndex(void)
+#include <iostream>
+
+class Weapon
 {
-	static int 	index = -1;
-
-	index++;
-	return (index);
-}
-
-Account::Account(int initial_deposit)
-{
-	this->_accountIndex = getIndex();
-}
-
-Account::~Account(void)
-{
+	public:
+		Weapon(std::string type);
+		~Weapon();
 	
-}
+		std::string &getType(void);
+		void setType(std::string newType);
+	private:
+		std::string type;
+};
+
+#endif

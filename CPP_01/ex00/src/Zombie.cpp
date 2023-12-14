@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 17:45:05 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/14 09:00:59 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/14 13:31:30 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/14 13:55:13 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Account.hpp"
+#include "../inc/Zombie.hpp"
 
-int	getIndex(void)
+Zombie::Zombie(void) { }
+
+Zombie::~Zombie(void) 
 {
-	static int 	index = -1;
-
-	index++;
-	return (index);
+	std::cout << "the zombie " + this->name + " was cured" << std::endl;
 }
 
-Account::Account(int initial_deposit)
+void Zombie::announce(void)
 {
-	this->_accountIndex = getIndex();
+	std::cout << this->name + ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Account::~Account(void)
-{
-	
-}
+void Zombie::setName(std::string name) { this->name = name; }
+

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 17:45:05 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/14 09:00:59 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/14 16:34:12 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/14 17:06:52 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Account.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-int	getIndex(void)
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanA
 {
-	static int 	index = -1;
+	public:
+		HumanA(std::string name, Weapon gun);
+		~HumanA();
 
-	index++;
-	return (index);
-}
+		void attack(void);
+	private:
+		std::string name;
+		Weapon		weapon;
+};
 
-Account::Account(int initial_deposit)
-{
-	this->_accountIndex = getIndex();
-}
-
-Account::~Account(void)
-{
-	
-}
+#endif

@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 17:45:05 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/14 09:00:59 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/14 16:34:17 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/14 17:16:01 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Account.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-int	getIndex(void)
+#include <iostream>
+#include "Weapon.hpp"
+
+class HumanB
 {
-	static int 	index = -1;
+	public:
+		HumanB();
+		HumanB(std::string name);
+		~HumanB();
+		void attack(void);
+		void setWeapon(Weapon gun);
+		
+	private:
+		std::string name;
+		Weapon		gun;
+};
 
-	index++;
-	return (index);
-}
-
-Account::Account(int initial_deposit)
-{
-	this->_accountIndex = getIndex();
-}
-
-Account::~Account(void)
-{
-	
-}
+#endif

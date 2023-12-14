@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 17:45:05 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/14 09:00:59 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/14 14:29:03 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/14 15:00:22 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Account.hpp"
+#include "../inc/Zombie.hpp"
 
-int	getIndex(void)
+Zombie* zombieHorde(int N, std::string name)
 {
-	static int 	index = -1;
+	Zombie *horde = new Zombie[N];
 
-	index++;
-	return (index);
-}
-
-Account::Account(int initial_deposit)
-{
-	this->_accountIndex = getIndex();
-}
-
-Account::~Account(void)
-{
+	std::cout << "The order is being created" << std::endl;
+	for (int i = 0; i < N; i++)
+		horde[i].setName(name);
 	
+	return (horde);
 }

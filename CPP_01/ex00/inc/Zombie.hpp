@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 17:45:05 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2023/12/14 09:00:59 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2023/12/14 13:31:33 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2023/12/14 13:49:57 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Account.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-int	getIndex(void)
+#include <iostream>
+
+class Zombie
 {
-	static int 	index = -1;
+	public:
+		Zombie();
+		~Zombie();
 
-	index++;
-	return (index);
-}
+		void announce(void);
+		void setName(std::string name);
+	private:
+		std::string	name;
+};
 
-Account::Account(int initial_deposit)
-{
-	this->_accountIndex = getIndex();
-}
+void	randomChump( std::string name );
+Zombie	*newZombie( std::string name );
 
-Account::~Account(void)
-{
-	
-}
+#endif
