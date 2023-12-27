@@ -10,12 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = Unnecessary_violence 
 
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
-SRC = 
+SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRC:%.cpp=%.o))

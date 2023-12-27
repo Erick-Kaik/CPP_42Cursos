@@ -10,12 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = replace
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = 
+SRC = main.cpp ReplaceStr.cpp
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRC:%.cpp=%.o))
