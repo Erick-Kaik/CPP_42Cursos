@@ -5,31 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/29 15:56:28 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/02 17:25:00 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2024/01/03 15:20:56 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2024/01/03 15:22:23 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Fixed.hpp"
+#include "../inc/ScavTrap.hpp"
 
-int main(void)
-{
-    Fixed a;
-    Fixed b(a);
-    Fixed c;
+static void TestingCombat() {
+  ScavTrap base_marvin("Marvin");
+  ScavTrap marvin = base_marvin;
+  marvin.attack("Moulinette");
+  marvin.takeDamage(50);
+  marvin.beRepaired(50);
+  marvin.takeDamage(120);
+  marvin.attack("Moulinette");
+}
 
-    c = b;
-    std::cout << "First Stage" << std::endl;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
+static void TestGuardKeeper() {
+  ScavTrap hodoor("Hodoor");
+  hodoor.guardGate();
+  hodoor.guardGate();
+}
 
-    std::cout << "Second Stage" << std::endl;
-    a.setRawBits(10);
-    std::cout << a.getRawBits() << std::endl;
-    b.setRawBits(8);
-    std::cout << b.getRawBits() << std::endl;
-    c.setRawBits(-42);
-    std::cout << c.getRawBits() << std::endl;
-    return (0);
+int main() {
+  TestingCombat();
+  TestGuardKeeper();
 }

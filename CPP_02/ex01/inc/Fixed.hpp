@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/29 15:56:35 by ekaik-ne          #+#    #+#             */
+/*   Created: 2024/01/02 17:29:21 by ekaik-ne          #+#    #+#             */
 /*   Updated: 2024/01/03 11:09:16 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -14,20 +14,28 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
     public:
         Fixed();
+        Fixed(const int value_int);
+        Fixed(const float value_float);
         Fixed(const Fixed &fix);
         Fixed &operator=(const Fixed &fix);
         ~Fixed();
 
         int getRawBits(void) const;
         void setRawBits(int const raw);
+
+        float toFloat( void ) const;
+        int toInt( void ) const;
     private:
         int fix_pointer;
         static const int bitshiting = 8; 
 };
+
+std::ostream &operator<<(std::ostream &os, const Fixed &fix);
 
 #endif

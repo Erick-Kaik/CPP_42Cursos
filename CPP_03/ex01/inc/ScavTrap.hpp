@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/29 15:56:35 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/03 11:09:16 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2024/01/03 14:46:59 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2024/01/03 15:26:44 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class Fixed
+class ScavTrap : public ClapTrap
 {
     public:
-        Fixed();
-        Fixed(const Fixed &fix);
-        Fixed &operator=(const Fixed &fix);
-        ~Fixed();
+        ScavTrap(std::string name);
+        ScavTrap(ScavTrap &scavTrap);
+        ScavTrap &operator=(const ScavTrap &scavTrap);
+        ~ScavTrap();
 
-        int getRawBits(void) const;
-        void setRawBits(int const raw);
+        void attack(const std::string &target);
+        void guardGate();
     private:
-        int fix_pointer;
-        static const int bitshiting = 8; 
+        bool _guardGate;
 };
 
 #endif

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/29 15:56:28 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/02 17:25:00 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2024/01/02 17:29:26 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2024/01/03 11:21:39 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 int main(void)
 {
     Fixed a;
-    Fixed b(a);
-    Fixed c;
+    Fixed const b( 10 );
+    Fixed const c( 42.42f );
+    Fixed const d( b );
+    a = Fixed( 1234.4321f );
 
-    c = b;
     std::cout << "First Stage" << std::endl;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-
+    std::cout << "a is " << a << std::endl;
+    std::cout << "b is " << b << std::endl;
+    std::cout << "c is " << c << std::endl;
+    std::cout << "d is " << d << std::endl;
     std::cout << "Second Stage" << std::endl;
-    a.setRawBits(10);
-    std::cout << a.getRawBits() << std::endl;
-    b.setRawBits(8);
-    std::cout << b.getRawBits() << std::endl;
-    c.setRawBits(-42);
-    std::cout << c.getRawBits() << std::endl;
-    return (0);
+    std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+    std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+    std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+    std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+    
+    return 0;
 }

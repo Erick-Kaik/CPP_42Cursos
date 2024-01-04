@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/29 15:56:28 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/02 17:25:00 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2024/01/03 11:25:01 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2024/01/03 12:14:33 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,14 @@
 int main(void)
 {
     Fixed a;
-    Fixed b(a);
-    Fixed c;
+    Fixed const b(Fixed( 5.05f ) * Fixed( 2 ));
 
-    c = b;
-    std::cout << "First Stage" << std::endl;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-
-    std::cout << "Second Stage" << std::endl;
-    a.setRawBits(10);
-    std::cout << a.getRawBits() << std::endl;
-    b.setRawBits(8);
-    std::cout << b.getRawBits() << std::endl;
-    c.setRawBits(-42);
-    std::cout << c.getRawBits() << std::endl;
-    return (0);
+    std::cout << "1° -> " << a << std::endl;
+    std::cout << "2° -> " << ++a << std::endl;
+    std::cout << "3° -> " << a << std::endl;
+    std::cout << "4° -> " << a++ << std::endl;
+    std::cout << "5° -> " << a << std::endl;
+    std::cout << "6° -> " << b << std::endl;
+    std::cout << "7° -> " << Fixed::max( a, b ) << std::endl;
+    return 0;
 }
