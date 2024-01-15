@@ -6,7 +6,7 @@
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:15:19 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/03 15:07:29 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/01/08 13:51:15 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ void ClapTrap::message(char c, std::string value)
     switch (c)
     {
     case 'a':
-        std::cout << "ClapTrap " << this->_name << " attacks " << value << ", causing " << this->_attack_damage << " points of damage!🎯" << std::endl;
+        std::cout << this->_name << " attacks " << value << ", causing " << this->_attack_damage << " points of damage!🎯" << std::endl;
         break;
     case 'b':
-        std::cout << "ClapTrap is now healed in " << value << std::endl;
+        std::cout << this->_name << " is now healed in " << value << std::endl;
         break;
     case 't':
-        std::cout << "ClapTrap received " << value << " of damage" << std::endl;
+        std::cout << this->_name << " received " << value << " of damage" << std::endl;
         break;
     default:
-        std::cout << "ClapTrap has no life or energy points.😭" << std::endl;
+        std::cout << this->_name << " has no life or energy points.😭" << std::endl;
         break;
     }
 }
