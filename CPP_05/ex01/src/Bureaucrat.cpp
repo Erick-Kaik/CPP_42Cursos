@@ -6,7 +6,7 @@
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 13:07:22 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/23 17:08:40 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/01/23 16:43:25 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 	this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &bureaucrat) : _name(bureaucrat._name)
+Bureaucrat::Bureaucrat(Bureaucrat &bureaucrat)
 {
 	*this = bureaucrat;
 }

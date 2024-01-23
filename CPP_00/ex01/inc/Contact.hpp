@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include <sstream>
 
 class Contact
 {
@@ -24,7 +25,13 @@ class Contact
 
 		void Add(std::string FirstName, std::string LastName, std::string Nickname, std::string PhoneNumber, std::string darkestSecret);
 		
-		void Display();
+		void Display(int index);
+		void DisplayUnique(void);
+		std::string getFirstName(void);
+		std::string getLastName(void);
+		std::string getNickname(void);
+		std::string getPhoneNumber(void);
+		std::string getDarkestSecret(void);
 	private:
 		std::string FirstName;
 		std::string LastName;

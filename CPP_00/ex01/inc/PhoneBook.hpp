@@ -13,7 +13,6 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include <sstream>
 #include "Contact.hpp"
 
 class PhoneBook
@@ -28,6 +27,8 @@ class PhoneBook
 	private:
 		int		list;
 		Contact	contatos[8];
+
+		bool FieldsValid(const std::string &str);
 };
 
 #endif

@@ -25,34 +25,41 @@ void Contact::Add(std::string FirstName, std::string LastName, std::string Nickn
 	this->darkestSecret = darkestSecret;
 }
 
-void Contact::Display()
-{
-	std::string aux;
-	std::string print;
+std::string Contact::getFirstName(void) { return this->FirstName; }
+std::string Contact::getLastName(void) { return this->LastName; }
+std::string Contact::getNickname(void) { return this->Nickname; }
+std::string Contact::getPhoneNumber(void) { return this->PhoneNumber; }
+std::string Contact::getDarkestSecret(void) { return this->darkestSecret; }
 
-	for (size_t i = 0; i < 5; i++)
+void Contact::Display(int index)
+{
+	std::string			aux;
+	std::string			print;
+	std::stringstream	numStr;
+
+	numStr << index;
+	std::cout << "INDEX    |FirstName|Last Name|Nickname " << std::endl;
+	std::cout << "---------|---------|---------|---------" << std::endl;
+	for (size_t i = 0; i < 4; i++)
 	{
 		switch (i)
 		{
 			case 0:
-				aux = this->FirstName;
+				aux = numStr.str();
 				break;
 			case 1:
-				aux = this->LastName;
+				aux = getFirstName();
 				break;
 			case 2:
-				aux = this->Nickname;
+				aux = getLastName();
 				break;
 			case 3:
-				aux = this->PhoneNumber;
-				break;
-			default:
-				aux = this->darkestSecret;
+				aux = getNickname();
 				break;
 		}
 		for (size_t j = 0; j < 10; j++)
 		{
-			if (j > aux.size())
+			if (j > aux.length())
 				print += ' ';
 			else
 			{
@@ -62,9 +69,20 @@ void Contact::Display()
 					print += aux[j];
 			}
 		}
-		if (i + 1 < 5)
+		if (i < 3)
 			print += '|';
 		aux.clear();
 	}
 	std::cout << print << std::endl;	
+}
+
+void Contact::DisplayUnique(void)
+{
+	std::cout << "Display unique contact" << std::endl;
+	std::cout << "First Name: " + getFirstName() << std::endl;
+	std::cout << "Last Name: " + getLastName() << std::endl;
+	std::cout << "Nickname: " + getNickname() << std::endl;
+	std::cout << "Phone Number: " + getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " + getDarkestSecret() << std::endl;
+	std::cout << "---------------------------------------" << std::endl;
 }
