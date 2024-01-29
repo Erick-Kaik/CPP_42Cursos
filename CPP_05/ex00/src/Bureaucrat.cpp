@@ -6,7 +6,7 @@
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 13:07:22 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/23 17:08:40 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/01/26 08:54:53 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ Bureaucrat::~Bureaucrat() { }
 
 void Bureaucrat::incrementGrade()
 {
-	if (this->_grade - 1 < 1)
+	if ((this->_grade - 1) < 1)
 		throw GradeTooHighException();
 	this->_grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
-	if (this->_grade + 1 > 150)
+	if ((this->_grade + 1) > 150)
 		throw GradeTooLowException();
 	this->_grade++;
 }

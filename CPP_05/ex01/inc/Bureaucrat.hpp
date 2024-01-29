@@ -6,20 +6,17 @@
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 09:32:44 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/23 16:43:20 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:54:39 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#define RED "\033[1;31m"
-#define GREEN "\033[1;32m"
-#define YELLOW "\033[1;33m"
-#define BLUE "\033[1;34m"
-#define RESET "\033[0m"
-
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -31,6 +28,7 @@ class Bureaucrat
 
 		void incrementGrade();
 		void decrementGrade();
+		void signForm(Form &form);
 
 		std::string getName() const;
 		int getGrade() const;

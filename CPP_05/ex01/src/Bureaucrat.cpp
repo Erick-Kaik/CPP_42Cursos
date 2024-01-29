@@ -6,7 +6,7 @@
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 13:07:22 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/23 16:43:25 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:40:15 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 	this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &bureaucrat)
+Bureaucrat::Bureaucrat(Bureaucrat &bureaucrat) : _name(bureaucrat._name)
 {
 	*this = bureaucrat;
 }
@@ -49,9 +49,24 @@ void Bureaucrat::decrementGrade()
 	this->_grade++;
 }
 
+void Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " couldn’t sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+	
+}
+
 std::string Bureaucrat::getName() const { return this->_name; }
 
 int Bureaucrat::getGrade() const { return this->_grade; }
+
 
 Bureaucrat::GradeTooLowException::GradeTooLowException() {  }
 
