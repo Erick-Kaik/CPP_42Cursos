@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/31 13:14:10 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/31 13:16:36 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2024/02/01 15:54:28 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2024/02/02 11:40:38 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRYBBERTCREATIONFORM_HPP
-# define SHRYBBERTCREATIONFORM_HPP
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 #include "AForm.hpp"
+#include <iostream>
 
-class ShrubberyCreationForm : public AForm
+class Intern
 {
 	public:
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(ShrubberyCreationForm &shrubberyCreationForm);
-		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &shrubberyCreationForm);
-		~ShrubberyCreationForm();
+		Intern();
+		Intern(Intern &intern);
+		Intern &operator=(const Intern &intern);
+		~Intern();
 
-		void execute(Bureaucrat const &executor) const;
+		AForm *makeForm(std::string nameForm, std::string targer);
 	private:
-		std::string _target;
+		
 };
-
 
 #endif
