@@ -6,7 +6,7 @@
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 15:54:28 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/02/02 11:40:38 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/02/05 10:07:23 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define INTERN_HPP
 
 #include "AForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include <iostream>
 
 class Intern
@@ -24,9 +27,14 @@ class Intern
 		Intern &operator=(const Intern &intern);
 		~Intern();
 
-		AForm *makeForm(std::string nameForm, std::string targer);
-	private:
-		
+		AForm *makeForm(std::string nameForm, std::string target);
+
+	class NotExistFormException : public std::exception { 
+			public:
+				NotExistFormException();
+				const char *what() const throw();
+	};
+	
 };
 
 #endif

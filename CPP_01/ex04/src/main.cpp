@@ -18,16 +18,18 @@ int main(int argc, char *argv[])
     std::string::iterator it;
     
     if (argc != 4)
-        std::cout << "falta arg" << std::endl;
+        std::cout << "Send only the 4 necessary arguments, namely 'Base File Name', 'Old Text' and 'New Text'!" << std::endl;
     else
     {
         if (replaceStr.OpenFile(argv[1], argv[2], argv[3]))
         {
             if (replaceStr.ReadLocateStr())
-                std::cout << "seu arquivo '.replace' foi criado com sucessor" << std::endl;
+                std::cout << "Your '.replace' file was created with successor." << std::endl;
             else
-                std::cout << "seu arquivo não teve nenhuma modificação, logo não ha necessidade de criar um novo arquivo" << std::endl;
+                std::cout << "Your file has not had any modifications, so there is no need to create a new file." << std::endl;
         }
+		else
+			std::cout << "The file " << argv[1] << " does not exist!" << std::endl;
     }
     return 0;
 }

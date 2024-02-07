@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/29 10:51:39 by ekaik-ne          #+#    #+#              #
-#    Updated: 2024/02/05 10:02:36 by ekaik-ne         ###   ########.fr        #
+#    Created: 2024/02/07 17:17:22 by ekaik-ne          #+#    #+#              #
+#    Updated: 2024/02/07 17:17:43 by ekaik-ne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = intern
+NAME = converter
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+SRC = main.cpp ScalarConverter.cpp
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRC:%.cpp=%.o))
