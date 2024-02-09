@@ -6,7 +6,7 @@
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 10:22:15 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/02/07 08:34:53 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/02/09 13:23:54 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,19 @@
 
 #include <iostream>
 
+enum type
+{
+	DOUBLE,
+	CHAR,
+	FLOAT,
+	INT,
+	ERROR_TYPE
+};
+
 class ScalarConverter
 {
 	public:
-		static void convert(std::string value);
+		static void convert(const std::string &value);
 		
 		class CharException : public std::exception { 
 			public:
