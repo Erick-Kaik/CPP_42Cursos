@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 17:09:57 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/02/15 17:53:01 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2024/02/15 13:53:50 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2024/02/15 16:23:22 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/A.hpp"
-#include "../inc/B.hpp"
-#include "../inc/Base.hpp"
-#include "../inc/C.hpp"
+#ifndef DATA_HPP
+# define DATA_HPP
 
-Base *generate(void) 
+#include <iostream>
+
+class Data
 {
-	
-}
+	public:
+		Data(int intValue, std::string stringValue);
+		Data(Data &data);
+		Data &operator=(const Data &data);
+		~Data();
+		
+		void displayData(void);
+		int displayIntValue(void);
+		std::string displayStringValue(void);
+	private:
+		int _intValue;
+		std::string _stringValue;
+};
 
-void identify(Base *p)
-{
-
-}
-
-void identify(Base &p)
-{
-	
-}
-
-int main(void)
-{
-	
-	return 0;
-}
+#endif

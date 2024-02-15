@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serialization.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 17:09:57 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/02/15 17:53:01 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2024/02/15 13:42:22 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2024/02/15 16:35:06 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/A.hpp"
-#include "../inc/B.hpp"
-#include "../inc/Base.hpp"
-#include "../inc/C.hpp"
+#ifndef SERIALIZATION_HPP
+# define SERIALIZATION_HPP
 
-Base *generate(void) 
+#include "Data.hpp"
+#include <stdint.h>
+
+
+class Serialization
 {
-	
-}
+	public:
+		static uintptr_t serialize(Data *ptr);
+		static Data *deserialize(uintptr_t raw);
+		
+	private:
+		Serialization();
+		Serialization(Serialization &serialization);
+		Serialization &operator=(const Serialization &serialization);
+		~Serialization();
+};
 
-void identify(Base *p)
-{
-
-}
-
-void identify(Base &p)
-{
-	
-}
-
-int main(void)
-{
-	
-	return 0;
-}
+#endif

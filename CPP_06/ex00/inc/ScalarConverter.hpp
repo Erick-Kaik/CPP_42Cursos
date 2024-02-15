@@ -6,7 +6,7 @@
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 10:22:15 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/02/09 13:23:54 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/02/15 13:10:03 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #define RESET "\033[0m"
 
 #include <iostream>
+#include <typeinfo>
+#include <cstdlib>
+#include <limits>
 
 enum type
 {
@@ -27,6 +30,16 @@ enum type
 	ERROR_TYPE
 };
 
+enum error
+{
+	UNABLE,
+	NON_DISPLAY,
+	IMPOSSIBLE,
+	INF_NEG,
+	INF_POS,
+	NAN
+};
+
 class ScalarConverter
 {
 	public:
@@ -34,23 +47,31 @@ class ScalarConverter
 		
 		class CharException : public std::exception { 
 			public:
-				CharException();
+				CharException(int type);
 				const char *what() const throw();
+			private:
+				int _type;
 		};
 		class IntException : public std::exception { 
 			public:
-				IntException();
+				IntException(int type);
 				const char *what() const throw();
+			private:
+				int _type;
 		};
 		class FloatException : public std::exception { 
 			public:
-				FloatException();
+				FloatException(int type);
 				const char *what() const throw();
+			private:
+				int _type;
 		};
 		class DoubleException : public std::exception { 
 			public:
-				DoubleException();
+				DoubleException(int type);
 				const char *what() const throw();
+			private:
+				int _type;
 		};
 	private:
 		ScalarConverter();
