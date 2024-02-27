@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:53:42 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/02/20 10:40:45 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2024/02/22 16:54:08 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2024/02/26 10:54:36 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef ITER_HPP
+# define ITER_HPP
 
 #include <iostream>
-#include <ctime>
-#include <cstdlib>
+#include <string>
+#include <cstddef>
 
-class Base
+template <typename T>
+void iter(T *array, size_t lenght, void ft(const T &reference))
 {
-	public:
-		Base();
-		virtual ~Base();	
-};
+	for (size_t i = 0; i < lenght; i++)
+		ft(array[i]);
+}
+
+template <typename T>
+void printElement(const T &reference) { std::cout << reference << " "; }
 
 #endif

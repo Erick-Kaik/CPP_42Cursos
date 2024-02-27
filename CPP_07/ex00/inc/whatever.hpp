@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:53:42 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/02/20 10:40:45 by ekaik-ne         ###   ########.fr       */
+/*   Created: 2024/02/20 14:43:20 by ekaik-ne          #+#    #+#             */
+/*   Updated: 2024/02/22 16:53:50 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 #include <iostream>
-#include <ctime>
-#include <cstdlib>
 
-class Base
+template <typename T>
+void swap(T &v1, T &v2)
 {
-	public:
-		Base();
-		virtual ~Base();	
-};
+	T aux = v2;
+	v2 = v1;
+	v1 = aux;
+}
+
+template <typename T>
+T min(T v1, T v2)
+{
+	return v1 == v2 ? v2 : (v1 < v2 ? v1 : v2);
+}
+
+template <typename T>
+T max(T v1, T v2)
+{
+	return v1 == v2 ? v2 : (v1 > v2 ? v1 : v2);
+}
 
 #endif
