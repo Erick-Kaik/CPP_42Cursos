@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/04 14:28:07 by ekaik-ne          #+#    #+#              #
-#    Updated: 2024/03/04 14:28:46 by ekaik-ne         ###   ########.fr        #
+#    Created: 2024/03/08 16:52:29 by ekaik-ne          #+#    #+#              #
+#    Updated: 2024/03/08 16:54:05 by ekaik-ne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = array
+NAME = span
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRC:%.cpp=%.o))

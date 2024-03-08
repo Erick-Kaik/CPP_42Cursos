@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/04 14:28:07 by ekaik-ne          #+#    #+#              #
-#    Updated: 2024/03/04 14:28:46 by ekaik-ne         ###   ########.fr        #
+#    Created: 2024/03/07 09:06:18 by ekaik-ne          #+#    #+#              #
+#    Updated: 2024/03/07 09:07:26 by ekaik-ne         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = array
+NAME = easyfind
 
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
