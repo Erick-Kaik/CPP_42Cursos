@@ -6,28 +6,45 @@
 /*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 16:54:10 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/03/08 17:20:55 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/03/15 09:59:58 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
+#include <iostream>
+#include <vector>
+
 class Span
 {
 	public:
-		Span(int max);
+		Span(unsigned int N);
 		Span(Span &span);
 		Span &operator=(const Span &span);
 		~Span();
 
-		void addNumber();
+		void addNumber(int N);
 		
-		int shortestSpan();
-		int longestSpan();
+		int shortestSpan(void);
+		int longestSpan(void);
+
+		class FullMaxSizeException : public std::exception {
+			public:
+				FullMaxSizeException();
+				const char *what() const throw();
+		};
+
+		class DistanceException : public std::exception {
+			public:
+				DistanceException();
+				const char *what() const throw();
+		};
+
 	private:
-		int _max;
-		int _values[];
+		unsigned int		_N;
+		std::vector<int>	_vector;
+		
 };
 
 #endif
