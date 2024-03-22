@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ekaik-ne <ekaik-ne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:41:50 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/23 15:41:52 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/03/22 11:42:17 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class WrongCat : public WrongAnimal
 
 		void MakeSound() const;
 		std::string getType() const;
+		Brain &getBrain() const;
 		private:
 			Brain *_brain;
 };

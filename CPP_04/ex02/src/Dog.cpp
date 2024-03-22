@@ -7,17 +7,23 @@ Dog::Dog() : Animal(), _brain(new Brain())
 	this->_brain->createIdeas(this->type);
 }
 
-Dog::Dog(Dog &cat) : Animal(cat)
+Dog::Dog(Dog &dog) : Animal()
 {
 	std::cout << BLUE << "Dog copy constructor called" << RESET << std::endl;
-	*this = cat;
+	this->type = dog.getType();
+	this->_brain = new Brain(dog.getBrain());
 }
 
-Dog &Dog::operator=(const Dog &cat)
+Dog &Dog::operator=(const Dog &dog)
 {
 	std::cout << BLUE << "Dog copy assignment operator called" << RESET << std::endl;
-	if (this != &cat)
-		this->type = cat.type;
+	if (this != &dog)
+	{
+		if (this->_brain != NULL)
+			delete this->_brain;
+		this->type = dog.type;
+		this->_brain = new Brain(dog.getBrain());
+	}
 	return *this;
 }
 
@@ -38,3 +44,5 @@ void Dog::display(size_t n) const
 {
 	this->_brain->displayIdeias(n, this->type);
 }
+
+Brain &Dog::getBrain() const { return *this->_brain; }

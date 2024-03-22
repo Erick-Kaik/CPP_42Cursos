@@ -6,17 +6,23 @@ WrongCat::WrongCat() : WrongAnimal(), _brain(new Brain())
 	this->type = "Base";
 }
 
-WrongCat::WrongCat(WrongCat &wrongCat) : WrongAnimal(wrongCat)
+WrongCat::WrongCat(WrongCat &wrongCat) : WrongAnimal()
 {
 	std::cout << "WrongCat copy constructor called" << std::endl;
-	*this = wrongCat;
+	this->type = wrongCat.getType();
+	this->_brain = new Brain(wrongCat.getBrain());
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &wrongCat)
 {
 	std::cout << "WrongCat copy assignment operator called" << std::endl;
 	if (this != &wrongCat) 
+	{
+		if (this->_brain != NULL)
+			delete (this->_brain);
 		this->type = wrongCat.type;
+		this->_brain = new Brain(wrongCat.getBrain());
+	}
 	return *this;
 }
 
@@ -32,3 +38,5 @@ void WrongCat::MakeSound() const
 }
 
 std::string WrongCat::getType() const { return this->type; }
+
+Brain &WrongCat::getBrain() const { return *this->_brain; }

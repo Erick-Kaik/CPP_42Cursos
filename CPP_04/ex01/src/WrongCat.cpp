@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ekaik-ne <ekaik-ne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:43:08 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/23 15:43:11 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/03/22 11:47:19 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,23 @@ WrongCat::WrongCat() : WrongAnimal(), _brain(new Brain())
 	this->type = "Base";
 }
 
-WrongCat::WrongCat(WrongCat &wrongCat) : WrongAnimal(wrongCat)
+WrongCat::WrongCat(WrongCat &wrongCat) : WrongAnimal()
 {
 	std::cout << "WrongCat copy constructor called" << std::endl;
-	*this = wrongCat;
+	this->type = wrongCat.getType();
+	this->_brain = new Brain(wrongCat.getBrain());
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &wrongCat)
 {
 	std::cout << "WrongCat copy assignment operator called" << std::endl;
 	if (this != &wrongCat) 
+	{
+		if (this->_brain != NULL)
+			delete (this->_brain);
 		this->type = wrongCat.type;
+		this->_brain = new Brain(wrongCat.getBrain());
+	}
 	return *this;
 }
 
@@ -44,3 +50,5 @@ void WrongCat::MakeSound() const
 }
 
 std::string WrongCat::getType() const { return this->type; }
+
+Brain &WrongCat::getBrain() const { return *this->_brain; }

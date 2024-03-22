@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ekaik-ne <ekaik-ne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:41:26 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/23 15:41:28 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/03/22 11:19:46 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Cat : public Animal
 		void MakeSound() const;
 		std::string getType() const;
 		void display(size_t n) const;
+		Brain &getBrain() const;
 	private:
 		Brain *_brain;
 };

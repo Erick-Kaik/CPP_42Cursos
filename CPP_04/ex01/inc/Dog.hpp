@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekaik-ne <ekaik-ne@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ekaik-ne <ekaik-ne@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 15:41:30 by ekaik-ne          #+#    #+#             */
-/*   Updated: 2024/01/23 15:41:31 by ekaik-ne         ###   ########.fr       */
+/*   Updated: 2024/03/22 11:21:34 by ekaik-ne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Dog : public Animal
 		void MakeSound() const;
 		std::string getType() const;
 		void display(size_t n) const;
+		Brain &getBrain() const;
 	private:
 		Brain *_brain;
 };
